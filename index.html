@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Garuda ESP Nusantara</title>
+  <meta name="description" content="Secure AI-assisted ESP platform for semester-long professional learning.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="toastHost" class="toast-host"></div>
+
+<section id="landing" class="landing">
+  <canvas id="fxCanvas" class="fx-canvas"></canvas>
+  <header class="landing-header">
+    <div class="brand-pill">
+      <img src="assets/logo-square.png" alt="Garuda ESP Nusantara logo">
+      <div><strong>GARUDA ESP NUSANTARA</strong><span>Secure AI-Assisted ESP Application</span></div>
+    </div>
+    <div class="access-pill"><span></span>Protected Access</div>
+  </header>
+
+  <main class="landing-main">
+    <section class="hero-card">
+      <div id="heroArt" class="hero-art" aria-label="Garuda ESP Nusantara live visual">
+        <div class="hero-shine"></div>
+      </div>
+    </section>
+
+    <aside class="auth-card">
+      <div class="auth-title">
+        <img src="assets/logo-square.png" alt="">
+        <div><span>Secure Application</span><h1>Role Access Portal</h1></div>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-tab="student">Student</button>
+        <button class="tab" data-tab="lecturer">Lecturer</button>
+        <button class="tab" data-tab="admin">Admin</button>
+      </div>
+
+      <form class="auth-form active" data-form="student" id="studentForm">
+        <h2>Student Register / Login</h2>
+        <p>Access semester ESP materials, speaker-supported sessions, quizzes, assignments, virtual rooms, and professional learning reports.</p>
+        <div class="field-grid two">
+          <label>Full Name<input id="studentName" placeholder="Full name"></label>
+          <label>Email<input id="studentEmail" type="email" placeholder="student@email.com"></label>
+          <label>Password<input id="studentPassword" type="password" placeholder="Create password"></label>
+          <label>ESP Discipline<select id="studentDiscipline"></select></label>
+        </div>
+        <button class="btn primary" type="button" id="studentRegisterBtn">Register Student</button>
+        <div class="divider"><span>or login</span></div>
+        <div class="field-grid two">
+          <label>Email<input id="studentLoginEmail" type="email" placeholder="student@email.com"></label>
+          <label>Password<input id="studentLoginPassword" type="password" placeholder="Password"></label>
+        </div>
+        <button class="btn gold" type="submit">Login Student</button>
+      </form>
+
+      <form class="auth-form" data-form="lecturer" id="lecturerForm">
+        <h2>Lecturer Approval Access</h2>
+        <p>Lecturers register first and enter the authoring, assessment, and reporting workspace only after admin approval.</p>
+        <div class="field-grid two">
+          <label>Full Name<input id="lecturerName" placeholder="Lecturer name"></label>
+          <label>Email<input id="lecturerEmail" type="email" placeholder="lecturer@email.com"></label>
+          <label>Password<input id="lecturerPassword" type="password" placeholder="Create password"></label>
+          <label>Expertise<input id="lecturerExpertise" placeholder="ESP / discipline"></label>
+        </div>
+        <button class="btn primary" type="button" id="lecturerRegisterBtn">Request Lecturer Approval</button>
+        <div class="divider"><span>or login after approval</span></div>
+        <div class="field-grid two">
+          <label>Email<input id="lecturerLoginEmail" type="email" placeholder="lecturer@email.com"></label>
+          <label>Password<input id="lecturerLoginPassword" type="password" placeholder="Password"></label>
+        </div>
+        <button class="btn gold" type="submit">Login Lecturer</button>
+      </form>
+
+      <form class="auth-form" data-form="admin" id="adminForm" onsubmit="event.preventDefault(); safeAdminLogin(event);">
+        <h2>Admin Command Access</h2>
+        <p>Enter the authorized administrator PIN to manage users, institutions, curriculum, reports, virtual rooms, and system settings.</p>
+        <label>Admin PIN<input id="adminPin" type="password" placeholder="Admin PIN" onkeydown="if(event.key==='Enter'){event.preventDefault(); safeAdminLogin(event);}"></label>
+        <button class="btn primary" type="button" onclick="safeAdminLogin(event)">Admin Login</button>
+      </form>
+      <div class="landing-copy">Copyright Dr. Joko Slamet</div>
+    </aside>
+  </main>
+</section>
+
+<section id="appShell" class="app hidden">
+  <aside class="sidebar">
+    <div class="side-logo"><img src="assets/logo-brand.png" alt=""><div><strong>GARUDA</strong><span>ESP NUSANTARA</span></div></div>
+    <div id="userCard" class="user-card"></div>
+    <nav id="sideNav" class="side-nav"></nav>
+    <div class="side-copy">© 2026 Garuda ESP Nusantara. Copyright Dr. Joko Slamet. All rights reserved.</div>
+  </aside>
+
+  <main class="workspace">
+    <header class="topbar">
+      <div><span id="roleKicker">Workspace</span><h2 id="pageTitle">Dashboard</h2></div>
+      <div class="top-actions">
+        <button onclick="navigate('forum')">Forum</button>
+        <button onclick="navigate('chat')">Chat</button>
+        <button onclick="navigate('helpdesk')">Help Desk</button>
+        <button onclick="exportData()">Export</button>
+        <button class="logout" onclick="logout()">Logout</button>
+      </div>
+    </header>
+    <section id="mainView" class="main-view"></section>
+    <footer>© 2026 Garuda ESP Nusantara. Copyright Dr. Joko Slamet. All rights reserved.</footer>
+  </main>
+</section>
+
+<dialog id="modal" class="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalBody"></div>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+
+<script>
+let __garudaAdminLoginRunning = false;
+
+function forceOpenAdminWorkspace() {
+  const landing = document.getElementById("landing");
+  const appShell = document.getElementById("appShell");
+
+  if (landing) {
+    landing.classList.add("hidden");
+    landing.style.setProperty("display", "none", "important");
+    landing.style.visibility = "hidden";
+    landing.setAttribute("aria-hidden", "true");
+  }
+
+  if (appShell) {
+    appShell.classList.remove("hidden");
+    appShell.style.setProperty("display", "grid", "important");
+    appShell.style.visibility = "visible";
+    appShell.removeAttribute("aria-hidden");
+  }
+}
+
+function safeAdminLogin(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  if (__garudaAdminLoginRunning) return;
+  __garudaAdminLoginRunning = true;
+
+  const pinField = document.getElementById("adminPin");
+  const pin = pinField ? pinField.value.trim() : "";
+
+  if (pin !== "JS2026") {
+    __garudaAdminLoginRunning = false;
+    alert("Admin PIN incorrect. Please enter JS2026.");
+    return false;
+  }
+
+  try {
+    localStorage.setItem("gesn.session.final", JSON.stringify({
+      id: "ADMIN",
+      role: "admin",
+      name: "Administrator",
+      email: ""
+    }));
+  } catch (error) {
+    console.error(error);
+  }
+
+  try {
+    if (typeof session !== "undefined") {
+      session = { id: "ADMIN", role: "admin", name: "Administrator", email: "" };
+    }
+  } catch (error) {}
+
+  forceOpenAdminWorkspace();
+
+  try {
+    if (typeof renderUserCard === "function") renderUserCard();
+    if (typeof renderNav === "function") renderNav("admin");
+    if (typeof navigate === "function") navigate("dashboard");
+    if (typeof toast === "function") toast("Welcome", "ADMIN workspace opened.");
+  } catch (error) {
+    console.error("Dashboard render failed:", error);
+    location.reload();
+  }
+
+  setTimeout(() => { __garudaAdminLoginRunning = false; }, 800);
+  return false;
+}
+
+window.safeAdminLogin = safeAdminLogin;
+window.forceOpenAdminWorkspace = forceOpenAdminWorkspace;
+</script>
+
+
+</body>
+</html>
