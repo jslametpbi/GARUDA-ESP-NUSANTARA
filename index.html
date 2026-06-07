@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GARUDA ESP NUSANTARA</title>
+  <meta name="description" content="AI-powered local wisdom English for professional and intercultural futures." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="toastHost" class="toast-host" aria-live="polite"></div>
+
+  <section id="landing" class="landing-shell">
+    <div class="ornament ornament-left"></div>
+    <div class="ornament ornament-right"></div>
+
+    <header class="landing-topbar compact">
+      <div class="brand-chip deluxe">
+        <div class="side-logo">𓅃</div>
+        <div>
+          <strong>GARUDA ESP NUSANTARA</strong>
+          <small>AI • ESP • Local Wisdom • Bhinneka Tunggal Ika</small>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="ghost-btn" id="previewBtn">View Design Board</button>
+        <button class="primary-btn" data-scroll="authPanel">Enter Platform</button>
+      </div>
+    </header>
+
+    <main class="hero-grid fit-screen">
+      <section class="hero-copy card-glass premium-card">
+        <div class="flag-ribbon premium"><span></span><span></span></div>
+
+        <div id="garudaStage" class="garuda-stage" aria-label="5D Garuda visual presentation">
+          <div class="garuda-aura"></div>
+          <div class="garuda-ring garuda-ring-1"></div>
+          <div class="garuda-ring garuda-ring-2"></div>
+          <div class="garuda-map-glow"></div>
+          <div class="garuda-mark live-5d" aria-label="Garuda inspired emblem with Indonesian flag and Nusantara glow">
+            <svg viewBox="0 0 780 430" role="img" aria-label="Garuda, Indonesian flag, and Nusantara map illustration">
+              <defs>
+                <radialGradient id="goldGlow" cx="50%" cy="50%" r="65%">
+                  <stop offset="0" stop-color="#fff6ca"/>
+                  <stop offset=".42" stop-color="#d9b24c"/>
+                  <stop offset="1" stop-color="#7b4f13"/>
+                </radialGradient>
+                <linearGradient id="flagRed" x1="0" x2="1">
+                  <stop offset="0" stop-color="#750000"/>
+                  <stop offset=".52" stop-color="#c1141d"/>
+                  <stop offset="1" stop-color="#6d0008"/>
+                </linearGradient>
+                <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <path d="M0 106 C180 28 305 170 430 88 C540 18 660 60 780 26 L780 96 C620 154 516 120 420 164 C285 226 165 118 0 190 Z" fill="url(#flagRed)" opacity=".94"/>
+              <path d="M0 186 C174 100 302 244 444 156 C560 83 675 142 780 86 L780 162 C634 236 548 204 438 242 C280 297 156 196 0 278 Z" fill="#fff9ed" opacity=".98"/>
+              <path class="wing wing-left" d="M364 126 C247 42 126 54 26 96 C146 116 219 150 288 202 C198 172 104 172 22 222 C142 218 239 245 319 306 C271 303 213 320 152 360 C238 363 314 346 374 306 Z" fill="url(#goldGlow)"/>
+              <path class="wing wing-right" d="M416 126 C533 42 654 54 754 96 C634 116 561 150 492 202 C582 172 676 172 758 222 C638 218 541 245 461 306 C509 303 567 320 628 360 C542 363 466 346 406 306 Z" fill="url(#goldGlow)"/>
+              <path d="M390 66 C420 88 436 116 436 158 C436 226 402 272 390 328 C378 272 344 226 344 158 C344 116 360 88 390 66 Z" fill="url(#goldGlow)"/>
+              <path d="M374 52 C398 16 431 28 449 54 C426 54 416 64 406 82 C392 76 383 65 374 52Z" fill="#e6c566"/>
+              <circle cx="390" cy="158" r="30" fill="#8b0000" stroke="#f7d46a" stroke-width="5"/>
+              <path d="M104 344 C145 329 193 337 247 330 C287 324 322 340 360 331 M394 338 C455 324 492 336 539 326 C590 314 637 335 693 316" stroke="#d4af37" stroke-width="10" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+              <circle cx="247" cy="330" r="6" fill="#fff"/><circle cx="539" cy="326" r="6" fill="#fff"/><circle cx="693" cy="316" r="5" fill="#fff"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="kicker">AI • ESP • LOCAL WISDOM • BHINNEKA TUNGGAL IKA</div>
+        <h1>GARUDA<span>ESP NUSANTARA</span></h1>
+        <p class="hero-tagline">AI-Powered Local Wisdom English for Professional and Intercultural Futures</p>
+        <p class="hero-mini-copy">A complete multi-university ESP platform with 16 weeks, 6 disciplines, 6 Garuda pathways, online live-room support, assignments, quizzes, lecturer authoring, and administrative governance.</p>
+
+        <div class="hero-actions compact">
+          <button class="primary-btn" data-scroll="authPanel">Login / Register</button>
+          <button class="secondary-btn" data-scroll="authPanel">Access Roles</button>
+        </div>
+
+        <div class="hero-stats compact">
+          <div><strong>16</strong><span>Weeks</span></div>
+          <div><strong>6</strong><span>Disciplines</span></div>
+          <div><strong>6</strong><span>ESP Paths</span></div>
+          <div><strong>38</strong><span>Provinces</span></div>
+          <div><strong>1</strong><span>Online Room</span></div>
+        </div>
+
+        <div class="discipline-strip" aria-label="ESP disciplines">
+          <span>Tourism & Hospitality</span>
+          <span>Business & Entrepreneurship</span>
+          <span>Engineering & Technology</span>
+          <span>Health & Care</span>
+          <span>Maritime & Environment</span>
+          <span>Education & Communication</span>
+        </div>
+      </section>
+
+      <aside id="authPanel" class="auth-panel card-glass premium-card">
+        <div class="auth-tabs" role="tablist">
+          <button class="auth-tab active" data-auth-tab="student">Student</button>
+          <button class="auth-tab" data-auth-tab="lecturer">Lecturer</button>
+          <button class="auth-tab" data-auth-tab="admin">Admin</button>
+        </div>
+
+        <section class="auth-form active" data-auth-form="student">
+          <h2>Student Access</h2>
+          <p>Register and enter a full ESP learning environment with 16 weeks, 6 disciplines, 6 pathways, online room, assignments, quizzes, portfolio, and AI-assisted study tools.</p>
+          <div class="form-grid two compact-grid">
+            <label>Full Name<input id="studentName" type="text" placeholder="Your full name"></label>
+            <label>Email<input id="studentEmail" type="email" placeholder="student@email.com"></label>
+            <label>Password<input id="studentPassword" type="password" placeholder="Create password"></label>
+            <label>Province / Origin<input id="studentProvince" type="text" placeholder="Province / region (optional)"></label>
+          </div>
+          <button class="primary-btn full" id="studentRegisterBtn">Register Student</button>
+          <div class="divider"><span>or login</span></div>
+          <div class="form-grid two compact-grid">
+            <label>Email<input id="studentLoginEmail" type="email" placeholder="student@email.com"></label>
+            <label>Password<input id="studentLoginPassword" type="password" placeholder="Password"></label>
+          </div>
+          <button class="secondary-btn full" id="studentLoginBtn">Login Student</button>
+        </section>
+
+        <section class="auth-form" data-auth-form="lecturer">
+          <h2>Lecturer Access</h2>
+          <p>Lecturer accounts require Admin approval before entering curriculum design, material upload, task creation, live-room scheduling, review, and analytics features.</p>
+          <div class="form-grid two compact-grid">
+            <label>Full Name<input id="lecturerName" type="text" placeholder="Lecturer name"></label>
+            <label>Email<input id="lecturerEmail" type="email" placeholder="lecturer@email.com"></label>
+            <label>Password<input id="lecturerPassword" type="password" placeholder="Create password"></label>
+            <label>Expertise Area<input id="lecturerExpertise" type="text" placeholder="ESP, tourism, business, technology, etc."></label>
+            <label>Institution / Faculty<input id="lecturerInstitution" type="text" placeholder="Optional"></label>
+            <label>Staff ID<input id="lecturerIdNumber" type="text" placeholder="ID number (optional)"></label>
+          </div>
+          <button class="primary-btn full" id="lecturerRegisterBtn">Request Lecturer Approval</button>
+          <div class="divider"><span>or login after approval</span></div>
+          <div class="form-grid two compact-grid">
+            <label>Email<input id="lecturerLoginEmail" type="email" placeholder="lecturer@email.com"></label>
+            <label>Password<input id="lecturerLoginPassword" type="password" placeholder="Password"></label>
+          </div>
+          <button class="secondary-btn full" id="lecturerLoginBtn">Login Lecturer</button>
+        </section>
+
+        <section class="auth-form" data-auth-form="admin">
+          <h2>Admin Command Center</h2>
+          <p>Approve lecturers, manage multi-university users, control 16-week content, update discipline materials, schedule online rooms, and export institutional data.</p>
+          <label>Admin PIN<input id="adminPin" type="password" placeholder="Enter authorized PIN"></label>
+          <button class="primary-btn full" id="adminLoginBtn">Admin Login</button>
+          <p class="tiny-note">Authorized administrator only.</p>
+        </section>
+
+        <div class="auth-footer">Copyright Dr. Joko Slamet</div>
+      </aside>
+    </main>
+  </section>
+
+  <section id="appShell" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="side-brand">
+        <div class="side-logo">𓅃</div>
+        <div><strong>GARUDA ESP</strong><span>Nusantara</span></div>
+      </div>
+      <div class="user-card" id="userCard"></div>
+      <nav id="sideNav" class="side-nav"></nav>
+      <button class="logout-btn" id="logoutBtn">Logout</button>
+      <div class="auth-footer">Copyright Dr. Joko Slamet</div>
+    </aside>
+
+    <main class="workspace">
+      <header class="workspace-header">
+        <div>
+          <div class="kicker" id="roleKicker">Dashboard</div>
+          <h2 id="pageTitle">Dashboard</h2>
+        </div>
+        <div class="header-tools">
+          <button class="icon-btn" id="exportDataBtn" title="Export local data">Export</button>
+          <button class="icon-btn" id="themeToggleBtn" title="Change display mode">Theme</button>
+        </div>
+      </header>
+      <section id="mainView" class="main-view"></section>
+      <footer class="workspace-footer">Copyright Dr. Joko Slamet • GARUDA ESP NUSANTARA</footer>
+    </main>
+  </section>
+
+  <dialog id="detailModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalCloseBtn">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
