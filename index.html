@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GARUDA ESP NUSANTARA</title>
+  <meta name="description" content="A secure AI-assisted ESP platform rooted in Indonesian local wisdom, Garuda, Bhinneka Tunggal Ika, and Nusantara heritage." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="toastHost" class="toast-host" aria-live="polite"></div>
+
+  <section id="landing" class="landing-page">
+    <canvas id="landingParticles" class="landing-particles" aria-hidden="true"></canvas>
+    <div class="flag-wave flag-wave-red"></div>
+    <div class="flag-wave flag-wave-white"></div>
+    <div class="ambient ambient-gold"></div>
+    <div class="ambient ambient-red"></div>
+    <div class="batik-lines"></div>
+
+    <header class="secure-header">
+      <div class="secure-brand">
+        <div class="alive-logo small">
+          <span class="logo-glow"></span>
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M50 8 C60 18 66 28 66 42 C66 58 57 70 50 88 C43 70 34 58 34 42 C34 28 40 18 50 8Z"/>
+            <path d="M46 13 C55 1 70 7 76 20 C66 18 59 22 55 31"/>
+            <circle cx="50" cy="43" r="8"/>
+            <path d="M44 37 C28 23 11 24 4 32 C19 33 31 40 42 52 C27 47 15 50 5 58 C23 57 36 63 48 75"/>
+            <path d="M56 37 C72 23 89 24 96 32 C81 33 69 40 58 52 C73 47 85 50 95 58 C77 57 64 63 52 75"/>
+          </svg>
+        </div>
+        <div>
+          <strong>GARUDA ESP NUSANTARA</strong>
+          <span>Secure AI-Assisted ESP Application</span>
+        </div>
+      </div>
+      <div class="secure-status">
+        <span class="pulse-dot"></span>
+        <strong>Protected Access</strong>
+      </div>
+    </header>
+
+    <main class="landing-grid">
+      <section class="living-stage-card">
+        <div class="stage-meta">
+          
+        </div>
+
+        <div id="garudaStage" class="garuda-stage-pro">
+          <div class="stage-halo halo-one"></div>
+          <div class="stage-halo halo-two"></div>
+          <div class="stage-halo halo-three"></div>
+          <div class="indonesia-map-3d" aria-label="Animated Indonesia map">
+            <span class="map-piece sumatra"></span>
+            <span class="map-piece java"></span>
+            <span class="map-piece kalimantan"></span>
+            <span class="map-piece sulawesi"></span>
+            <span class="map-piece nusa"></span>
+            <span class="map-piece maluku"></span>
+            <span class="map-piece papua"></span>
+          </div>
+
+          <div class="garuda-5d" aria-label="Living Garuda visual">
+            <svg viewBox="0 0 900 520" role="img" aria-label="Garuda, Indonesian flag, and Nusantara map">
+              <defs>
+                <radialGradient id="metalGold" cx="50%" cy="38%" r="70%">
+                  <stop offset="0" stop-color="#fff9d9"/>
+                  <stop offset=".25" stop-color="#f8dc7a"/>
+                  <stop offset=".55" stop-color="#d0a636"/>
+                  <stop offset=".82" stop-color="#8c5a12"/>
+                  <stop offset="1" stop-color="#4a2b08"/>
+                </radialGradient>
+                <linearGradient id="deepRed" x1="0" x2="1">
+                  <stop offset="0" stop-color="#640005"/>
+                  <stop offset=".46" stop-color="#d8171f"/>
+                  <stop offset="1" stop-color="#740006"/>
+                </linearGradient>
+                <linearGradient id="whiteFlag" x1="0" x2="1">
+                  <stop offset="0" stop-color="#fff"/>
+                  <stop offset=".5" stop-color="#fff7e9"/>
+                  <stop offset="1" stop-color="#fff"/>
+                </linearGradient>
+                <filter id="liveShadow">
+                  <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#2a1404" flood-opacity=".36"/>
+                  <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#f8d76e" flood-opacity=".38"/>
+                </filter>
+              </defs>
+              <path class="flag-red-svg" d="M42 108 C180 28 318 160 456 92 C602 18 740 58 858 28 C820 96 754 132 678 162 C548 212 454 176 358 206 C248 240 132 174 42 108Z" fill="url(#deepRed)" opacity=".96"/>
+              <path class="flag-white-svg" d="M40 174 C188 98 314 238 456 160 C616 76 734 128 860 86 C824 156 742 190 668 214 C542 256 450 212 360 244 C242 286 136 224 40 174Z" fill="url(#whiteFlag)" opacity=".98"/>
+              <g filter="url(#liveShadow)">
+                <path class="wing wing-left" d="M424 152 C304 44 146 44 20 102 C160 118 252 164 344 238 C238 198 118 204 24 272 C178 260 294 306 398 392 C330 386 248 414 160 480 C284 478 376 444 438 386 Z" fill="url(#metalGold)"/>
+                <path class="wing wing-right" d="M476 152 C596 44 754 44 880 102 C740 118 648 164 556 238 C662 198 782 204 876 272 C722 260 606 306 502 392 C570 386 652 414 740 480 C616 478 524 444 462 386 Z" fill="url(#metalGold)"/>
+                <path class="body" d="M450 78 C490 110 512 154 508 210 C504 284 470 340 450 462 C430 340 396 284 392 210 C388 154 410 110 450 78Z" fill="url(#metalGold)"/>
+                <path class="head" d="M432 70 C456 20 506 28 532 66 C502 62 484 76 470 104 C452 96 438 84 432 70Z" fill="#f2d676"/>
+                <circle cx="450" cy="206" r="34" fill="#940009" stroke="#f7dc86" stroke-width="8"/>
+                <path class="claws" d="M110 424 C168 404 244 420 300 406 C348 394 390 420 432 404 M468 406 C528 392 578 418 638 398 C700 378 760 408 822 382" fill="none" stroke="#f0ca62" stroke-width="13" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="live-badge badge-a">38 Provinces</div>
+          <div class="live-badge badge-b">16 Weeks</div>
+          <div class="live-badge badge-c">6 Disciplines</div>
+          <div class="live-badge badge-d">6 ESP Skills</div>
+        </div>
+
+        <div class="brand-copy">
+          <div class="mini-kicker">AI • ESP • Local Wisdom • Bhinneka Tunggal Ika</div>
+          <h1>GARUDA <span>ESP NUSANTARA</span></h1>
+          <p>Secure AI-assisted English for Specific Purposes through Indonesian local wisdom, Garuda values, the Indonesian flag, and Nusantara heritage from all provinces.</p>
+        </div>
+
+        <div class="landing-metrics">
+          <article><strong>6</strong><span>ESP Disciplines</span></article>
+          <article><strong>6</strong><span>Integrated Skills</span></article>
+          <article><strong>16</strong><span>Week Materials</span></article>
+          <article><strong>38</strong><span>Province Modules</span></article>
+        </div>
+      </section>
+
+      <aside id="authPanel" class="secure-auth-card">
+        <div class="auth-crest">
+          <div class="alive-logo medium">
+            <span class="logo-glow"></span>
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M50 8 C60 18 66 28 66 42 C66 58 57 70 50 88 C43 70 34 58 34 42 C34 28 40 18 50 8Z"/>
+              <path d="M46 13 C55 1 70 7 76 20 C66 18 59 22 55 31"/>
+              <circle cx="50" cy="43" r="8"/>
+              <path d="M44 37 C28 23 11 24 4 32 C19 33 31 40 42 52 C27 47 15 50 5 58 C23 57 36 63 48 75"/>
+              <path d="M56 37 C72 23 89 24 96 32 C81 33 69 40 58 52 C73 47 85 50 95 58 C77 57 64 63 52 75"/>
+            </svg>
+          </div>
+          <div>
+            <span>Secure Application</span>
+            <h2>Role Access Portal</h2>
+          </div>
+        </div>
+
+        <div class="auth-tabs" role="tablist">
+          <button class="auth-tab active" data-tab="student">Student</button>
+          <button class="auth-tab" data-tab="lecturer">Lecturer</button>
+          <button class="auth-tab" data-tab="admin">Admin</button>
+        </div>
+
+        <form class="auth-form active" data-form="student" id="studentForm">
+          <h3>Student Register / Login</h3>
+          <p>Access full ESP materials, speaker-supported lessons, quizzes, assignments, online room, forum, and AI-assisted study.</p>
+          <div class="input-grid two">
+            <label>Full Name<input id="studentName" autocomplete="name" placeholder="Full name"></label>
+            <label>Email<input id="studentEmail" type="email" autocomplete="email" placeholder="student@email.com"></label>
+            <label>Password<input id="studentPassword" type="password" autocomplete="new-password" placeholder="Create password"></label>
+            <label>ESP Discipline<select id="studentDiscipline"></select></label>
+          </div>
+          <button class="btn btn-primary" type="button" id="studentRegisterBtn">Register Student</button>
+          <div class="divider"><span>or login</span></div>
+          <div class="input-grid two">
+            <label>Email<input id="studentLoginEmail" type="email" autocomplete="email" placeholder="student@email.com"></label>
+            <label>Password<input id="studentLoginPassword" type="password" autocomplete="current-password" placeholder="Password"></label>
+          </div>
+          <button class="btn btn-secondary" type="submit">Login Student</button>
+        </form>
+
+        <form class="auth-form" data-form="lecturer" id="lecturerForm">
+          <h3>Lecturer Approval Access</h3>
+          <p>Register first. Admin approval is required before lecturers can create materials, update tasks, manage rooms, and review submissions.</p>
+          <div class="input-grid two">
+            <label>Full Name<input id="lecturerName" placeholder="Lecturer name"></label>
+            <label>Email<input id="lecturerEmail" type="email" placeholder="lecturer@email.com"></label>
+            <label>Password<input id="lecturerPassword" type="password" placeholder="Create password"></label>
+            <label>Expertise<input id="lecturerExpertise" placeholder="ESP / discipline"></label>
+          </div>
+          <button class="btn btn-primary" type="button" id="lecturerRegisterBtn">Request Approval</button>
+          <div class="divider"><span>or login after approval</span></div>
+          <div class="input-grid two">
+            <label>Email<input id="lecturerLoginEmail" type="email" placeholder="lecturer@email.com"></label>
+            <label>Password<input id="lecturerLoginPassword" type="password" placeholder="Password"></label>
+          </div>
+          <button class="btn btn-secondary" type="submit">Login Lecturer</button>
+        </form>
+
+        <form class="auth-form" data-form="admin" id="adminForm">
+          <h3>Admin Command Center</h3>
+          <p>Enter the authorized PIN to manage users, lecturer approval, materials, analytics, online room, settings, forum, and help desk.</p>
+          <label>Admin PIN<input id="adminPin" type="password" autocomplete="current-password" placeholder="Admin PIN"></label>
+          <button class="btn btn-primary" type="submit">Admin Login</button>
+          <small class="secure-note">Authorized academic administrator only.</small>
+        </form>
+
+        <div class="auth-feature-chips"></div>
+        <div class="copyright">© 2026 Garuda ESP Nusantara. Copyright Dr. Joko Slamet. All rights reserved.</div>
+      </aside>
+    </main>
+  </section>
+
+  <section id="appShell" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="side-brand">
+        <div class="alive-logo side">
+          <span class="logo-glow"></span>
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M50 8 C60 18 66 28 66 42 C66 58 57 70 50 88 C43 70 34 58 34 42 C34 28 40 18 50 8Z"/>
+            <path d="M46 13 C55 1 70 7 76 20 C66 18 59 22 55 31"/>
+            <circle cx="50" cy="43" r="8"/>
+            <path d="M44 37 C28 23 11 24 4 32 C19 33 31 40 42 52 C27 47 15 50 5 58 C23 57 36 63 48 75"/>
+            <path d="M56 37 C72 23 89 24 96 32 C81 33 69 40 58 52 C73 47 85 50 95 58 C77 57 64 63 52 75"/>
+          </svg>
+        </div>
+        <div>
+          <strong>GARUDA ESP</strong>
+          <span>Nusantara</span>
+        </div>
+      </div>
+      <div id="userCard" class="user-card"></div>
+      <nav id="sideNav" class="side-nav" aria-label="Dashboard navigation"></nav>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+      <div class="copyright side-copy">© 2026 Garuda ESP Nusantara. Copyright Dr. Joko Slamet. All rights reserved.</div>
+    </aside>
+
+    <main class="workspace">
+      <header class="workspace-header">
+        <div>
+          <span id="roleKicker" class="mini-kicker">Dashboard</span>
+          <h2 id="pageTitle">Dashboard</h2>
+        </div>
+        <div class="dashboard-actions">
+          <button class="btn-mini" data-top-page="forum">Forum</button>
+          <button class="btn-mini" data-top-page="chat">Chat</button>
+          <button class="btn-mini" data-top-page="helpdesk">Help Desk</button>
+          <button class="btn-mini" id="exportDataBtn">Export</button>
+        </div>
+      </header>
+      <section id="mainView" class="main-view"></section>
+      <footer class="app-footer">© 2026 Garuda ESP Nusantara. Copyright Dr. Joko Slamet. All rights reserved.</footer>
+    </main>
+  </section>
+
+  <dialog id="modal" class="modal">
+    <div class="modal-box">
+      <button id="modalClose" class="modal-close" aria-label="Close">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
