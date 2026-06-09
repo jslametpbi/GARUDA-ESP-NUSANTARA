@@ -1,0 +1,91 @@
+
+:root{
+  --red:#8b0000;--deep:#120707;--gold:#d4af37;--cream:#fff7e8;--ink:#1d1712;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Inter,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 20% 10%,rgba(212,175,55,.18),transparent 25%),
+    radial-gradient(circle at 80% 20%,rgba(185,0,15,.22),transparent 22%),
+    linear-gradient(135deg,#170707,#3a0808 38%,#090909);
+}
+button,a.button{
+  border:0;border-radius:999px;padding:12px 18px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+}
+.primary{background:linear-gradient(135deg,#8b0000,#c40f19);color:white;box-shadow:0 14px 30px rgba(139,0,0,.22)}
+.soft{background:#fff8e7;color:#8b0000;border:1px solid rgba(212,175,55,.35)}
+.dark{background:#141414;color:#fff}
+.gold{background:linear-gradient(135deg,#d4af37,#f4d77c);color:#2d1b0a}
+.room-shell{width:min(1500px,96vw);margin:24px auto}
+.loading-card,.room-card{
+  background:var(--cream);
+  border:1px solid rgba(212,175,55,.38);
+  border-radius:28px;
+  padding:22px;
+  box-shadow:0 30px 100px rgba(0,0,0,.38);
+}
+.room-top{
+  display:flex;justify-content:space-between;gap:18px;align-items:center;
+  border-bottom:1px solid rgba(212,175,55,.26);
+  padding-bottom:16px;margin-bottom:16px;
+}
+.brand{display:flex;gap:14px;align-items:center;min-width:0}
+.brand img{width:74px;height:74px;object-fit:contain;border-radius:16px}
+.brand h1{margin:0;color:#8b0000;font-family:Georgia,serif;font-size:2.1rem;line-height:1}
+.brand p{margin:7px 0 0;color:#4d3c28;font-weight:700}
+.room-code{
+  background:#8b0000;color:white;border-radius:999px;padding:12px 18px;font-weight:1000;max-width:360px;word-break:break-word;text-align:center
+}
+.room-grid{display:grid;grid-template-columns:minmax(0,1.45fr) 410px;gap:18px}
+.stage{
+  background:linear-gradient(135deg,#071015,#1a0808);
+  color:#f7e6ab;border-radius:24px;min-height:430px;padding:28px;
+  display:grid;place-items:center;text-align:center;position:relative;overflow:hidden
+}
+.stage:before{
+  content:"";position:absolute;inset:-20%;
+  background:radial-gradient(circle at 50% 25%,rgba(212,175,55,.20),transparent 18%),
+             linear-gradient(115deg,transparent 10%,rgba(255,255,255,.12) 48%,transparent 62%);
+  animation:shine 7s ease-in-out infinite;
+}
+@keyframes shine{0%,100%{transform:translateX(-20%) rotate(0deg)}50%{transform:translateX(20%) rotate(2deg)}}
+.stage-inner{position:relative;z-index:1}
+.stage h2{font-family:Georgia,serif;font-size:2.5rem;margin:0 0 18px;color:#f8df91}
+.stage p{font-size:1.05rem;font-weight:800;max-width:720px;margin:0 auto 28px;line-height:1.5;color:#f5e8bd}
+.live-pill{display:inline-flex;background:#079447;color:#fff;padding:12px 24px;border-radius:999px;font-weight:1000}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.status{
+  background:#fff0c9;border:1px solid rgba(212,175,55,.32);border-radius:16px;padding:14px;color:#503719;font-weight:800
+}
+.side{
+  display:grid;gap:14px;
+}
+.side-card{
+  background:#fffaf0;border:1px solid rgba(212,175,55,.30);border-radius:20px;padding:16px
+}
+.side-card h3{margin:0 0 8px;color:#8b0000;font-family:Georgia,serif}
+.link-box{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center
+}
+.link-box code{
+  display:block;background:#fff3d5;border:1px solid rgba(212,175,55,.3);
+  border-radius:12px;padding:10px;color:#8b0000;font-weight:900;word-break:break-word
+}
+textarea{
+  width:100%;min-height:100px;border-radius:14px;border:1px solid rgba(212,175,55,.32);padding:12px;background:#fffdf8;font-family:inherit
+}
+.chat-item{border:1px solid rgba(212,175,55,.2);border-radius:12px;background:#fffdf8;padding:10px;margin-top:8px}
+.chat-item strong{color:#8b0000}.chat-item p{margin:4px 0}.chat-item small{color:#7c6a50}
+.attendance{margin:0;padding-left:20px}
+.footer-actions{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:16px}
+@media(max-width:1000px){
+  .room-grid{grid-template-columns:1fr}
+  .room-top{align-items:flex-start;flex-direction:column}
+  .stage{min-height:330px}
+  .brand h1{font-size:1.6rem}
+  .link-box{grid-template-columns:1fr}
+}
